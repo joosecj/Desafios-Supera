@@ -10,15 +10,14 @@ public class Main {
 
     List<Integer> numeros = new ArrayList<>();
 
-    int numero = sc.nextInt();
-    while (numero <= 0) {
+    int N = sc.nextInt();
+    while (N < 1 || N > 10) {
       System.out.println("Numero inválido, digite um novo número: ");
-      numero = sc.nextInt();
+      N = sc.nextInt();
     }
 
-    for (int i = 0; i < numero; i++) {
-      int n = sc.nextInt();
-      numeros.add(n);
+    for (int i = 0; i < N; i++) {
+      numeros.add(sc.nextInt());
     }
 
     List<Integer> numerosPares = numeros.stream()
