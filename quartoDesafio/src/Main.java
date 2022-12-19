@@ -8,8 +8,14 @@ public class Main {
     List<String> texto = new ArrayList<>();
 
     int N = sc.nextInt();
-    for (int i = 0; i <= N; i++) {
-      texto.add(decodificarLinha(sc.nextLine()));
+    sc.next();
+    for (int i = 0; i < N; i++) {
+      String line = sc.nextLine();
+      while (line.length() < 2 || line.length() > 100) {
+        System.out.println("Tamanho do texto não permmitido");
+        line = sc.nextLine();
+      }
+      texto.add(decodificarLinha(line.toUpperCase()));
     }
     texto.forEach(System.out::println);
   }
